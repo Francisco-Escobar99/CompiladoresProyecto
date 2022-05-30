@@ -35,7 +35,13 @@ class interfaz():
         self.labelTitulo2=tk.Label(self.ventanaNueva, text="Resultados Obtenidos", width=45, height=1, background="#4C5CA6", foreground="#FCF9F9", font=("Tahoma", 22,)).place(x=0,y=25)
         
 
-        busqueda_General(texto_Codigo)
+        reservadas = busqueda_Reservadas(texto_Codigo)
+        delimitador = busqueda_Delimitadores(texto_Codigo)
+
+        print('----------------')
+        print('Reservadas: ', reservadas)
+        print('delimitador: ', delimitador)
+
 
         self.labelTituloMetodo=tk.Label(self.ventanaNueva, text="Resultado", width=64, height=1,  background="#4C5CA6", foreground="#FCF9F9", font=("Arial", 15,)).place(x=133,y=100, width=450)
         self.cuadro2=tk.Label(self.ventanaNueva, background="#9AA8A8", highlightbackground="#4C5CA6",highlightthickness =1, bd=0).place(x=133,y=129, width=450, height=340)

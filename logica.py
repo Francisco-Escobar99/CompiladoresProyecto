@@ -6,12 +6,6 @@ delimitadores = ['"',',','<','-','.']
 letras = '^[A-Z|a-z]+$'
 enteros = '^[0-9]+$'
 
-def busqueda_General(codigo):
-  texto = codigo.split()
-
-  reservadas = busqueda_Reservadas(texto)
-  print('Reservadas: ', reservadas)
-
 def busqueda_Reservadas(texto):
 
     if palabras_Reservadas[0] in texto:
@@ -90,3 +84,38 @@ def busqueda_Reservadas(texto):
 
     return total
 
+def busqueda_Delimitadores(texto):
+
+    if delimitadores[0] in texto:
+        contador = texto.count(delimitadores[0])
+        print('Doble Comilla: ', contador)
+    else:
+        contador = 0
+    
+    if delimitadores[1] in texto:
+        contador2 = texto.count(delimitadores[1])
+        print('Coma: ', contador2)
+    else:
+        contador2 = 0
+
+    if delimitadores[2] in texto:
+        contador3 = texto.count(delimitadores[2])
+        print('Signo Mayor: ', contador3)
+    else:
+        contador3 = 0
+
+    if delimitadores[3] in texto:
+        contador4 = texto.count(delimitadores[3])
+        print('Guion: ', contador4)
+    else:
+        contador4 = 0
+    
+    if delimitadores[4] in texto:
+        contador5 = texto.count(delimitadores[4])
+        print('Puntos: ', contador5)
+    else:
+        contador5 = 0
+    
+    total = contador + contador2 + contador3 + contador4 + contador5
+
+    return total
