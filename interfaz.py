@@ -1,9 +1,5 @@
 import tkinter as tk
-
-
-
-
-
+from logica import *
 
 class interfaz():
 
@@ -24,13 +20,13 @@ class interfaz():
         self.CajaTexto=tk.Text(self.ventana, highlightbackground="#4C5CA6", foreground="#596186", highlightthickness = 2, bd=0, font=("Arial", 17))
         self.CajaTexto.place(x=340,y=201,width=375, height=286)
 
-        self.btn=tk.Button(self.ventana, text="Verificar", background="#4C5CA6", foreground="#FCF9F9", font=("Arial", 14, ), command= lambda:self.VentanaResultado())
+        self.btn=tk.Button(self.ventana, text="Verificar", background="#4C5CA6", foreground="#FCF9F9", font=("Arial", 14, ), command= lambda:self.VentanaResultado(self.CajaTexto.get('1.0','end')))
         self.btn.place(x=453,y=511, width=150, height=35)
 
         self.ventana.mainloop()
 
 
-    def VentanaResultado(self):
+    def VentanaResultado(self, texto_Codigo):
         self.ventanaNueva = tk.Tk()
         self.ventanaNueva.title("Resultado")
         self.ventanaNueva.geometry("700x550")
@@ -38,6 +34,11 @@ class interfaz():
 
         self.labelTitulo2=tk.Label(self.ventanaNueva, text="Resultados Obtenidos", width=45, height=1, background="#4C5CA6", foreground="#FCF9F9", font=("Tahoma", 22,)).place(x=0,y=25)
         
+
+        busqueda_General(texto_Codigo)
+
         self.labelTituloMetodo=tk.Label(self.ventanaNueva, text="Resultado", width=64, height=1,  background="#4C5CA6", foreground="#FCF9F9", font=("Arial", 15,)).place(x=133,y=100, width=450)
         self.cuadro2=tk.Label(self.ventanaNueva, background="#9AA8A8", highlightbackground="#4C5CA6",highlightthickness =1, bd=0).place(x=133,y=129, width=450, height=340)
+
+
 PrincipalVentana = interfaz()
