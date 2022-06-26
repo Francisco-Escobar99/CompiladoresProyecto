@@ -11,10 +11,10 @@ class interfaz():
         self.ventana.resizable(0,0)
      
         self.labelTitulo=tk.Label(self.ventana, text="Analizador de pseudocodigo", width=65, height=2, background="#4C5CA6" ,foreground="#FCF9F9", font=("Tahoma", 22,)).place(x=0,y=45)
-        image=tk.PhotoImage(file="Logo.png")
-        image= image.subsample(3,3)
-        label =tk.Label(image=image, background="#4C5CA6")
-        label.place(x=76,y=45, width=158, height=75)
+        #image=tk.PhotoImage(file="Logo.png")
+        #image= image.subsample(3,3)
+        #label =tk.Label(image=image, background="#4C5CA6")
+       # label.place(x=76,y=45, width=158, height=75)
 
         self.labelSubTitulo=tk.Label(self.ventana, text="Pseudocodigo a evaluar:", background="#D5E6DD", foreground="#596186", font=("Arial", 24)).place(x=355,y=150)
 
