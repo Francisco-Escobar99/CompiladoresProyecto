@@ -1,0 +1,5 @@
+Proceso suma
+Definir numero Como Entero
+Escribir " Numero: "
+Leer numero
+FinProceso
